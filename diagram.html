@@ -112,6 +112,98 @@ nav ul li:hover { color: #72a3ee; }
     font-size: 13px;
     margin-bottom: 10px;
 }
+
+/* Halaman & Animasi */
+.page-section { display: none; }
+.active-page { display: block; animation: fadeIn 0.4s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Simulasi Canvas */
+.canvas-container {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    position: relative;
+    max-width: 700px;
+}
+
+#mathCanvas {
+    width: 100%;
+    height: 450px;
+    display: block;
+    background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.controls {
+    padding: 10px;
+    background: #eee;
+    text-align: center;
+}
+.main-container {
+    display: flex;
+    min-height: 400px;
+}
+
+.left {
+    width: 20%;
+    background:blue;
+}
+
+.left li {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.left li:hover {
+    background: rgb(255, 255, 255);
+}
+
+.left .submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background:beige;
+    min-width: 150px;
+}
+
+.left li:hover .submenu {
+    display: block;
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+    }
+
+th {
+  background: lightblue;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
 </style>
 
 <body>
@@ -138,7 +230,7 @@ nav ul li:hover { color: #72a3ee; }
         <!-- Sidebar Kiri (Full Height) -->
         <aside class="sidebar-left">
             <ul>
-                <li class="nav-link"><a href="himpunan.html" style="text-decoration: none;">Pengertian Himpunan Notasi</a></li>
+                <li class="nav-link"><a href="himpunan.html " style="text-decoration: none;">Pengertian Himpunan Notasi</a></li>
                 <li class="nav-link"><a href="jenis2.html" style="text-decoration: none;">Jenis-Jenis Himpunan Operasi</a></li>
                 <li class="nav-link"><a href="diagram.html" style="text-decoration: none;">Diagram Venn</a></li>
             </ul>
@@ -147,12 +239,11 @@ nav ul li:hover { color: #72a3ee; }
         <!-- Konten Utama -->
         <div class="content">
             <section id="home" class="page-section active-page">
-                <h2>Ganti sendiri nanti</h2>
-                <br>
-                <hr>
-                <br>
+                <h2>Diagram Venn</h2>
+                <hr> <br>
                 <p>
-                    Di halaman ini, Anda dapat menemukan berbagai materi pembelajaran matematika yang disusun secara sistematis. Mulai dari pengertian dasar, jenis-jenis himpunan, hingga diagram Venn yang membantu visualisasi konsep himpunan. Setiap materi dilengkapi dengan contoh dan latihan untuk memperdalam pemahaman Anda.
+                    ini diagram venn, isinya nanti tentang diagram venn, nanti akan ada gambar diagram vennnya, nanti akan ada penjelasan tentang diagram vennnya, nanti akan ada contoh soal diagram vennnya, nanti akan ada pembahasan soal diagram vennnya, nanti akan ada latihan soal diagram vennnya, nanti akan ada pembahasan latihan soal diagram vennnya, nanti akan ada kesimpulan tentang diagram vennnya, nanti akan ada referensi tentang diagram vennnya, nanti akan ada link video pembelajaran diagram vennnya, nanti akan ada link latihan soal diagram vennnya, nanti akan ada link pembahasan soal diagram vennnya, nanti akan ada link pembahasan latihan soal diagram vennnya, nanti akan ada link kesimpulan tentang diagram vennnya, nanti akan ada link referensi tentang diagram vennnya, nanti akan ada link video pembelajaran diagram vennnya, nanti akan ada link latihan soal diagram vennnya, nanti akan ada link pembahasan soal diagram vennnya, nanti akan ada link pembahasan latihan soal diagram vennnya, nanti akan ada link kesimpulan tentang diagram vennnya, nanti akan ada link referensi tentang diagram vennnya, nanti akan ada link video pembelajaran diagram vennnya, nanti akan ada link latihan soal diagram vennnya, nanti akan ada link pembahasan soal diagram vennnya, nanti akan ada link pembahasan latihan soal diagram vennnya, nanti akan ada link kesimpulan tentang diagram vennnya, nanti akan ada link referensi tentang diagram vennnya, nanti akan ada link video pembelajaran diagram vennnya, nanti akan ada link latihan soal diagram vennnya, nanti akan ada link pembahasan soal diagram vennnya, nanti akan ada link pembahasan latihan soal diagram vennnya, nanti akan ada link kesimpulan tentang diagram vennnya, nanti akan ada link referensi tentang diagram vennnya, nanti akan ada link video pembelajaran diagram vennnya, nanti akan ada link latihan soal diagram vennnya, nanti akan ada link pembahasan soal diagram vennnya, nanti akan ada link pembahasan latihan soal diagram vennnya, nanti akan ada link kesimpulan tentang diagram vennnya, nanti akan ada link referensi tentang diagram vennnya, nanti akan ada link video pembelajaran diagram vennnya, nanti akan ada link latihan soal diagram vennnya, nanti akan ada link pembahasan soal diagram vennnya, nanti akan ada link pembahasan.
+                </p>
             </section>
 
             <section id="dashboard" class="page-section">

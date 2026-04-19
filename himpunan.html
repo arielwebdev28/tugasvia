@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Matematika - UNRAM</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Memastikan body minimal setinggi layar */
+    }
+
+    /* Header & Logo */
+    header {
+        background-color: #e87ec1; /* Biru Tua UNRAM */
+        color: white;
+        padding: 15px 20px;
+    }
+
+    .logo-area {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .unram-logo {
+        width: 60px; /* Ukuran Logo UNRAM */
+        height: auto;
+        margin-right: 15px;
+    }
+
+.header-text h1 { font-size: 22px; }
+.header-text p { font-size: 14px; color: #ccc; }
+
+nav ul {
+    display: flex;
+    list-style: none;
+    background: #78c1ee;
+    padding: 8px 15px;
+}
+
+nav ul li {
+    margin-right: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+nav ul li:hover { color: #72a3ee; }
+
+/* Layout Utama - Ini yang membuat kolom panjang ke bawah */
+.main-container {
+    display: flex;
+    flex: 1; /* Mengisi sisa ruang layar yang tersedia */
+}
+
+/* Sidebar Kiri */
+.sidebar-left {
+    width: 220px;
+    background: #f8f9fa;
+    border-right: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.sidebar-left ul { list-style: none; }
+.sidebar-left li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sidebar-left li:hover { background: #e9ecef; }
+
+/* Konten Tengah */
+.content {
+    flex: 1;
+    padding: 30px;
+    background: #ffffff;
+}
+
+/* Sidebar Kanan */
+.sidebar-right {
+    width: 200px;
+    background: #73b8e4; /* Hijau toska sesuai gambar */
+    color: white;
+    padding: 20px;
+}
+
+.sidebar-right h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 5px;
+}
+
+.link-box a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* Halaman & Animasi */
+.page-section { display: none; }
+.active-page { display: block; animation: fadeIn 0.4s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Simulasi Canvas */
+.canvas-container {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    position: relative;
+    max-width: 700px;
+}
+
+#mathCanvas {
+    width: 100%;
+    height: 450px;
+    display: block;
+    background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.controls {
+    padding: 10px;
+    background: #eee;
+    text-align: center;
+}
+.main-container {
+    display: flex;
+    min-height: 400px;
+}
+
+.left {
+    width: 20%;
+    background:blue;
+}
+
+.left li {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.left li:hover {
+    background: rgb(255, 255, 255);
+}
+
+.left .submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background:beige;
+    min-width: 150px;
+}
+
+.left li:hover .submenu {
+    display: block;
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+    }
+
+th {
+  background: lightblue;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+</style>
+
+<body>
+    <header>
+        <div class="logo-area">
+            <!-- Ganti src dengan file lokal jika ada, atau gunakan link ini -->
+            <img src="assets/img/logoUnram.png" alt="Logo UNRAM" class="unram-logo">
+            <div class="header-text">
+                <h1>Prodi Pendidikan Matematika</h1>
+                <p>Universitas Mataram</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-link active" data-target="home"><a href="index.html" style="text-decoration: none;">Home</a></li>
+                <li class="nav-link" data-target="profil"><a href="profil.html" style="text-decoration: none;">Profil</a></li>
+                <li class="nav-link" data-target="akademik"><a href="akademik.html" style="text-decoration: none;">Akademik</a></li>
+                <li class="nav-link" data-target="kontak"><a href="kontak.html" style="text-decoration: none;">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar Kiri (Full Height) -->
+        <aside class="sidebar-left">
+            <ul>
+                <li class="nav-link"><a href="himpunan.html " style="text-decoration: none;">Pengertian Himpunan Notasi</a></li>
+                <li class="nav-link"><a href="jenis2.html" style="text-decoration: none;">Jenis-Jenis Himpunan Operasi</a></li>
+                <li class="nav-link"><a href="diagram.html" style="text-decoration: none;">Diagram Venn</a></li>
+            </ul>
+        </aside>
+
+        <!-- Konten Utama -->
+        <div class="content">
+            <section id="home" class="page-section active-page">
+                <h2>Pengertian Himpunan Operasi</h2>
+                <hr> <br>
+                <table>
+                    <tr>
+                        <th>Nama Diagram</th>
+                        <th>Foto</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify;">Diagram 1 <br> <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit sequi illum nemo! Iure repellat odio ullam fuga quis culpa, ratione repudiandae deleniti reiciendis magnam porro mollitia sint, molestias eaque esse dolorem. Voluptates quidem magni ad, minus nobis tempore officiis harum omnis neque labore officia cumque vel dolore, molestias dolores optio maiores culpa blanditiis? Temporibus natus nulla quos quam pariatur alias maiores ut, quasi vel earum excepturi vitae dicta nam dolore porro? Neque tenetur aspernatur quisquam dignissimos aliquid veritatis delectus architecto, molestias sequi minima! Earum possimus aut facere? Esse animi id recusandae sed eveniet. Dolores, rerum incidunt nam rem eum eveniet.</td>
+                        <td><img src="assets/img/logoUnram.png" alt="Diagram 1" width="300" height="300px"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify;">Diagram 2 <br> <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit sequi illum nemo! Iure repellat odio ullam fuga quis culpa, ratione repudiandae deleniti reiciendis magnam porro mollitia sint, molestias eaque esse dolorem. Voluptates quidem magni ad, minus nobis tempore officiis harum omnis neque labore officia cumque vel dolore, molestias dolores optio maiores culpa blanditiis? Temporibus natus nulla quos quam pariatur alias maiores ut, quasi vel earum excepturi vitae dicta nam dolore porro? Neque tenetur aspernatur quisquam dignissimos aliquid veritatis delectus architecto, molestias sequi minima! Earum possimus aut facere? Esse animi id recusandae sed eveniet. Dolores, rerum incidunt nam rem eum eveniet.</td>
+                        <td><img src="assets/img/logoUnram.png" alt="Diagram 2" width="300" height="300px"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify;">Diagram 3 <br> <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit sequi illum nemo! Iure repellat odio ullam fuga quis culpa, ratione repudiandae deleniti reiciendis magnam porro mollitia sint, molestias eaque esse dolorem. Voluptates quidem magni ad, minus nobis tempore officiis harum omnis neque labore officia cumque vel dolore, molestias dolores optio maiores culpa blanditiis? Temporibus natus nulla quos quam pariatur alias maiores ut, quasi vel earum excepturi vitae dicta nam dolore porro? Neque tenetur aspernatur quisquam dignissimos aliquid veritatis delectus architecto, molestias sequi minima! Earum possimus aut facere? Esse animi id recusandae sed eveniet. Dolores, rerum incidunt nam rem eum eveniet.</td>
+                        <td><img src="assets/img/logoUnram.png" alt="Diagram 3" width="300" height="300px"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify;">Diagram 4 <br> <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit sequi illum nemo! Iure repellat odio ullam fuga quis culpa, ratione repudiandae deleniti reiciendis magnam porro mollitia sint, molestias eaque esse dolorem. Voluptates quidem magni ad, minus nobis tempore officiis harum omnis neque labore officia cumque vel dolore, molestias dolores optio maiores culpa blanditiis? Temporibus natus nulla quos quam pariatur alias maiores ut, quasi vel earum excepturi vitae dicta nam dolore porro? Neque tenetur aspernatur quisquam dignissimos aliquid veritatis delectus architecto, molestias sequi minima! Earum possimus aut facere? Esse animi id recusandae sed eveniet. Dolores, rerum incidunt nam rem eum eveniet.</td>
+                        <td><img src="assets/img/logoUnram.png" alt="Diagram 4" width="300" height="300px"></td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="dashboard" class="page-section">
+                <h2>Simulasi Geometri Interaktif</h2>
+                <div class="canvas-container">
+                    <div class="controls">
+                        <button id="btnPlay">Mulai Simulasi</button>
+                        <button id="btnStop">Berhenti</button>
+                    </div>
+                    <canvas id="mathCanvas"></canvas>
+                </div>
+            </section>
+
+            <!-- Section lainnya (profil, akademik, dll) -->
+            <section id="profil" class="page-section"><h2>Profil Prodi</h2></section>
+            <section id="akademik" class="page-section"><h2>Akademik</h2></section>
+            <section id="kontak" class="page-section"><h2>Kontak</h2></section>
+            <section id="data" class="page-section"><h2>Data Statistik</h2></section>
+            <section id="laporan" class="page-section"><h2>Laporan</h2></section>
+        </div>
+
+        <!-- Sidebar Kanan (Full Height) -->
+        <aside class="sidebar-right">
+            <h3>Shortcut / Link</h3>
+            <div class="link-box">
+                <a href="https://youtu.be/ghCGbuBT-D0?si=LidgnXitkYF6a_FY" target="_blank">Video Pembelajaran</a>
+                <a href="https://share.google/ZcCmWdDHVd6gZnFXw" target="_blank">Latihan</a>
+            </div>
+        </aside>
+    </div>
+
+    
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
