@@ -112,6 +112,98 @@ nav ul li:hover { color: #72a3ee; }
     font-size: 13px;
     margin-bottom: 10px;
 }
+
+/* Halaman & Animasi */
+.page-section { display: none; }
+.active-page { display: block; animation: fadeIn 0.4s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Simulasi Canvas */
+.canvas-container {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    position: relative;
+    max-width: 700px;
+}
+
+#mathCanvas {
+    width: 100%;
+    height: 450px;
+    display: block;
+    background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.controls {
+    padding: 10px;
+    background: #eee;
+    text-align: center;
+}
+.main-container {
+    display: flex;
+    min-height: 400px;
+}
+
+.left {
+    width: 20%;
+    background:blue;
+}
+
+.left li {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.left li:hover {
+    background: rgb(255, 255, 255);
+}
+
+.left .submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background:beige;
+    min-width: 150px;
+}
+
+.left li:hover .submenu {
+    display: block;
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+    }
+
+th {
+  background: lightblue;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
 </style>
 
 <body>
@@ -120,8 +212,8 @@ nav ul li:hover { color: #72a3ee; }
             <!-- Ganti src dengan file lokal jika ada, atau gunakan link ini -->
             <img src="assets/img/logoUnram.png" alt="Logo UNRAM" class="unram-logo">
             <div class="header-text">
-                <h1>Prodi Pendidikan Matematika</h1>
-                <p>Universitas Mataram</p>
+                <h1>Media Pembelajaran Matematika</h1>
+                <p>Materi Himpunan Kelas 7 SMP</p>
             </div>
         </div>
         <nav>
@@ -129,8 +221,7 @@ nav ul li:hover { color: #72a3ee; }
                 <li class="nav-link active" data-target="home"><a href="index.html" style="text-decoration: none;">Home</a></li>
                 <li class="nav-link" data-target="profil"><a href="profil.html" style="text-decoration: none;">Profil</a></li>
                 <li class="nav-link" data-target="akademik"><a href="akademik.html" style="text-decoration: none;">Akademik</a></li>
-                <li class="nav-link" data-target="kontak"><a href="kontak.html" style="text-decoration: none;">Kontak</a></li>
-            </ul>
+                
         </nav>
     </header>
 
@@ -138,8 +229,8 @@ nav ul li:hover { color: #72a3ee; }
         <!-- Sidebar Kiri (Full Height) -->
         <aside class="sidebar-left">
             <ul>
-                <li class="nav-link"><a href="himpunan.html" style="text-decoration: none;">Pengertian Himpunan Notasi</a></li>
-                <li class="nav-link"><a href="jenis2.html" style="text-decoration: none;">Jenis-Jenis Himpunan Operasi</a></li>
+                <li class="nav-link"><a href="himpunan.html" style="text-decoration: none;">Pengertian dan Notasi Himpunan </a></li>
+                <li class="nav-link"><a href="jenis2.html" style="text-decoration: none;">Jenis-Jenis  dan  Operasi Himpunan</a></li>
                 <li class="nav-link"><a href="diagram.html" style="text-decoration: none;">Diagram Venn</a></li>
             </ul>
         </aside>
@@ -147,31 +238,13 @@ nav ul li:hover { color: #72a3ee; }
         <!-- Konten Utama -->
         <div class="content">
             <section id="home" class="page-section active-page">
-                <h2>Ganti sendiri nanti</h2>
+                <h2>Selamat datang di media pembelajaran matematika</h2>
                 <br>
                 <hr>
                 <br>
-                <p>
-                    Di halaman ini, Anda dapat menemukan berbagai materi pembelajaran matematika yang disusun secara sistematis. Mulai dari pengertian dasar, jenis-jenis himpunan, hingga diagram Venn yang membantu visualisasi konsep himpunan. Setiap materi dilengkapi dengan contoh dan latihan untuk memperdalam pemahaman Anda.
+                 <p>Di halaman ini, kamu akan diajak untuk memahami konsep himpunan secara bertahap, mulai dari pengertian dasar, jenis-jenis himpunan, hingga penggunaan diagram Venn untuk mempermudah visualisasi. Setiap materi disusun secara sistematis agar mudah dipahami, serta dilengkapi dengan contoh dan latihan soal yang dapat membantu kamu memperdalam pemahaman. <br> 
+                Belajar matematika tidak harus sulit. Dengan penjelasan yang sederhana dan langkah yang terarah, kamu bisa memahami setiap konsep dengan lebih percaya diri. Yuk, mulai perjalanan belajarmu dari sini dan tingkatkan kemampuanmu sedikit demi sedikit!</p>
             </section>
-
-            <section id="dashboard" class="page-section">
-                <h2>Simulasi Geometri Interaktif</h2>
-                <div class="canvas-container">
-                    <div class="controls">
-                        <button id="btnPlay">Mulai Simulasi</button>
-                        <button id="btnStop">Berhenti</button>
-                    </div>
-                    <canvas id="mathCanvas"></canvas>
-                </div>
-            </section>
-
-            <!-- Section lainnya (profil, akademik, dll) -->
-            <section id="profil" class="page-section"><h2>Profil Prodi</h2></section>
-            <section id="akademik" class="page-section"><h2>Akademik</h2></section>
-            <section id="kontak" class="page-section"><h2>Kontak</h2></section>
-            <section id="data" class="page-section"><h2>Data Statistik</h2></section>
-            <section id="laporan" class="page-section"><h2>Laporan</h2></section>
         </div>
 
         <!-- Sidebar Kanan (Full Height) -->
@@ -184,6 +257,10 @@ nav ul li:hover { color: #72a3ee; }
         </aside>
     </div>
 
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 15px; background: #e87ec1; color: white; margin-top: auto;">
+        <p>Made with ❤️ by <a href="https://www.instagram.com/hstifrdna_/?utm_source=ig_web_button_share_sheet" target="_blank">My Calon Bini Gwejh</a></p>
+    </footer>
     
     <script src="assets/js/script.js"></script>
 </body>
